@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GENED 1188 Project Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column; 
+            align-items: center;
+            height: 100vh;
+            background-color: #F3F3F3;
+        }
+        .page-title {
+            font-family: Arial, sans-serif; /* Consistent font for simplicity */
+            font-weight: bold; /* Makes the font bold */
+            color: #A51C30; /* Harvard Crimson */
+            margin: 20px 0; /* Adds vertical spacing */
+            text-align: center; /* Centers the title */
+            font-size: 32px; /* Enhances visibility and emphasis */
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 15px;
+            width: 80%;
+            max-width: 960px;
+        }
+        .gallery form {
+            grid-column: auto; /* Ensures form elements also take up full grid columns */
+            width: 100%;
+            margin: 0; /* Removes any default margin */
+        }
+        .project {
+            background-color: #A51C30; /* Harvard Crimson */
+            color: white;
+            border: none;
+            padding: 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            display: block; /* Ensures the button fills the form */
+            width: 100%; /* Ensures buttons inside forms take full width */
+            height: 100px;
+        }
+        .project:hover {
+            background-color: #930F1E;
+        }
+        .logout-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #A51C30; /* Harvard Crimson */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .logout-button:hover {
+            background-color: #930F1E;
+        }
+        /* Styling for flash messages */
+        .flash-messages {
+            width: 80%; /* Match the gallery width for consistency */
+            margin-top: 10px; /* Spacing from the top or logout button */
+            text-align: center;
+            padding: 10px;
+            background: #f8d7da;
+            color: #721c24;
+            border-radius: 5px;
+            border: 1px solid #f5c6cb;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <form action="/logout">
+            <button class="logout-button">Logout</button>
+        </form>
+    </div>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div class="flash-messages">
+          {% for message in messages %}
+            <p>{{ message }}</p>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+    <h1 class="page-title">GENED 1188 STUDENTS' PROJECT GALLERY</h1>
+    <div class="gallery">
+        <form action="Image_gen">
+            <button type="submit" class="project">AI Image Generator</button>
+        </form>
+        <form action="tts">
+            <button type="submit" class="project">AI Text-To-Speech</button>
+        </form>
+        <button class="project">Project 3</button>
+        <button class="project">Project 4</button>
+        <button class="project">Project 5</button>
+        <button class="project">Project 6</button>
+        <button class="project">Project 7</button>
+        <button class="project">Project 8</button>
+        <button class="project">Project 9</button>
+        <button class="project">Project 10</button>
+        <button class="project">Project 11</button>
+        <button class="project">Project 12</button>
+        <button class="project">Project 13</button>
+        <button class="project">Project 14</button>
+        <button class="project">Project 15</button>
+        <button class="project">Project 16</button>
+    </div>
+</body>
+</html>
