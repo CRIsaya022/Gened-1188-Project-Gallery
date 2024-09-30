@@ -11,7 +11,7 @@ from pathlib import Path
 users = {}
 
 app = Flask(__name__)
-app.secret_key = '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'
+app.secret_key = 'Enter API KEY'
 app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///users.db"
 db = SQLAlchemy(app)
 app.app_context().push()
@@ -90,7 +90,7 @@ def Image_gen():
 
 @app.route('/Gen_image', methods=['POST'])
 def generate_image():
-    api_key = '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'  
+    api_key = 'Enter API KEY'  
     headers = {
         'Authorization': f'Bearer {api_key}',
         'Content-Type': 'application/json'
@@ -140,7 +140,7 @@ def generate_speech():
     if not text:
         return "No text provided", 400
 
-    api_key = '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'  # Use environment variables for API keys in production
+    api_key = 'Enter API KEY'  
     headers = {
         'Authorization': f'Bearer {api_key}',
         'Content-Type': 'application/json'

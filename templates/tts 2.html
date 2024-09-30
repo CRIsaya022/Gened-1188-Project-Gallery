@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text to Speech Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F3F3F3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        textarea, button {
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #A51C30; /* Harvard Crimson */
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #930F1E;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Enter Text for Speech Synthesis</h2>
+        <form action="/Gen_speech" method="POST">
+            <textarea name="text" placeholder="Enter your text here" rows="4" required></textarea>
+            <button type="submit">Generate Speech</button>
+        </form>
+    </div>
+</body>
+</html>
